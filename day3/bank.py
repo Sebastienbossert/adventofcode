@@ -1,4 +1,4 @@
-""" Exercice 2 of adventofcode"""
+""" Exercice 3 of adventofcode"""
 
 import os
 
@@ -76,7 +76,7 @@ def read_file(filename:str, filepath:str):
     return table_of_bank
 
 def made_the_calcul_part_1(banks:list):
-    """ Used to made the calc of part 1 of exercice 2"""
+    """ Used to made the calc of part 1 of exercice 3"""
     int_final = 0
     for bank in banks:
         joltage = bank.calculate_joltage()
@@ -84,7 +84,7 @@ def made_the_calcul_part_1(banks:list):
     print(int_final)
 
 def made_the_calcul_part_2(banks:list):
-    """ Used to made the calc of part 1 of exercice 2"""
+    """ Used to made the calc of part 1 of exercice 3"""
     int_final = 0
     for bank in banks:
         joltage = bank.calculate_joltage_2()
