@@ -102,20 +102,18 @@ def made_the_calcul_part_1(dict_of_elevator:dict):
 def made_the_calcul_part_2(dict_of_elevator:dict):
     """ Used to made the calc of part 2 of exercice 4"""
     
-    copy_of_dict = dict_of_elevator.copy()
     compteur_final = 0
     compteur = 1
 
     while compteur != 0 :
         compteur = 0
-        dict_of_elevator = copy_of_dict
         for key,_ in dict_of_elevator.items():
             for keyrouleau, rouleau in dict_of_elevator[key].items():
                 if rouleau.get_if_a_rouleau_is_there():
                     retour = check_adjacent(monrouleau=rouleau,dict_of_elevator=dict_of_elevator)
                     if retour:
                         compteur += 1
-                        copy_of_dict[key][keyrouleau].remove_rouleau()
+                        dict_of_elevator[key][keyrouleau].remove_rouleau()
         compteur_final += compteur
 
     print(compteur_final)
