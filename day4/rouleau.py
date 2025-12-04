@@ -20,11 +20,11 @@ class Rouleau :
         return self.is_a_rouleau
     
     def get_horizontal_position(self):
-        """ Return if this is a rouleau or not """
+        """ Return Horizontal position """
         return self.horizontal_position
 
     def get_vertical_position(self):
-        """ Return if this is a rouleau or not """
+        """ Return Vertical position """
         return self.vertical_position
     
     def remove_rouleau(self):
@@ -100,7 +100,7 @@ def made_the_calcul_part_1(dict_of_elevator:dict):
     print(compteur)
 
 def made_the_calcul_part_2(dict_of_elevator:dict):
-    """ Used to made the calc of part 1 of exercice 4"""
+    """ Used to made the calc of part 2 of exercice 4"""
     
     copy_of_dict = dict_of_elevator.copy()
     compteur_final = 0
@@ -108,6 +108,7 @@ def made_the_calcul_part_2(dict_of_elevator:dict):
 
     while compteur != 0 :
         compteur = 0
+        dict_of_elevator = copy_of_dict
         for key,_ in dict_of_elevator.items():
             for keyrouleau, rouleau in dict_of_elevator[key].items():
                 if rouleau.get_if_a_rouleau_is_there():
@@ -115,7 +116,7 @@ def made_the_calcul_part_2(dict_of_elevator:dict):
                     if retour:
                         compteur += 1
                         copy_of_dict[key][keyrouleau].remove_rouleau()
-        compteur_final += compteur         
+        compteur_final += compteur
 
     print(compteur_final)
 
